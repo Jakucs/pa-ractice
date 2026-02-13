@@ -4,12 +4,17 @@ console.log(albums[0])
 let trackName = [];
 
 for(let album of albums){
+    //console.log(album)
     for(let detail of album.details){
-        console.log(detail)
-        trackName.unshift(detail)
+        //console.log(detail.name)
+        trackName.push(detail.name)
     }
 }
-console.log(trackName[0].name)
+
+/* for(let number in trackName){
+    console.log(number)
+} */
+console.log(trackName[3502])
 
 
 // Write your code here
