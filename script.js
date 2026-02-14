@@ -1,17 +1,17 @@
 import { albums } from './data.js';
 
-console.log(albums[0])
+/* console.log(albums[0])
 
 for(let i of albums){
     for(let detail of i.details){
         console.log(detail.track_id)
     }
-}
+} */
 
 
 // Write your code here
 
-function getSongCountInFirst(albums){
+/* function getSongCountInFirst(albums){
     let returnNumber = 0;
    
         for(let detailsNumber in albums[0].details){
@@ -24,7 +24,7 @@ function getSongCountInFirst(albums){
     return returnNumber
 }
 
-console.log(getSongCountInFirst(albums))
+console.log(getSongCountInFirst(albums)) */
 
 
 
@@ -41,7 +41,7 @@ console.log(getSongCountInFirst(albums))
 
 console.log(getSongCountInFirst(albums)) */
 
-function getAvailableAmount(){
+/* function getAvailableAmount(){
     let counter = 0;
     for(let i of albums){
         if(i.status=="available"){
@@ -52,4 +52,15 @@ function getAvailableAmount(){
     return counter
 }
 
-console.log(getAvailableAmount())
+console.log(getAvailableAmount()) */
+
+
+function searchAlbums(namePart){
+    for(let i of albums){
+        if(i.name.toLowerCase().includes(namePart)){
+            console.log(i.name)
+        }
+    }
+}
+
+searchAlbums("all")
