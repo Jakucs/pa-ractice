@@ -55,12 +55,25 @@ console.log(getSongCountInFirst(albums)) */
 console.log(getAvailableAmount()) */
 
 
-function searchAlbums(namePart){
+/* function searchAlbums(namePart){
     for(let i of albums){
         if(i.name.toLowerCase().includes(namePart)){
-            console.log(i.name)
+            console.log(i)
         }
     }
 }
 
-searchAlbums("all")
+searchAlbums("for") */
+
+
+function searchAlbums(namePart){
+    for(let i of albums){
+        for(let j of i.details){
+            if(j.name.toLowerCase().includes(namePart.toLowerCase())){
+                console.log(j)
+            }
+        }
+    }
+}
+
+searchAlbums("Hello")
