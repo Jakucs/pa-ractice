@@ -121,7 +121,36 @@ function getAlbumRuntime(product){
 }
 
 
-for(let album of albums){
+/* for(let album of albums){
     console.log(getAlbumRuntime(album))
+} */
 
+
+function getMostValuableAlbumForRuntime(){
+    let runtimes = [];
+    let prices = [];
+    let result = [];
+    for(let album of albums){
+        //console.log(album)
+        runtimes.push(getAlbumRuntime(album))
+        
+        prices.push(album.price)
+    }
+    // console.log(runtimes)
+    // console.log(prices)
+
+    for(let i of prices){
+        for(let j of runtimes){
+            result.push(i/j)
+        }
+    }
+    let maxNumber = 0;
+    for(let i of result){
+        if(i>maxNumber){
+            maxNumber=i
+        }
+    }
+    console.log(maxNumber)
 }
+
+getMostValuableAlbumForRuntime()
