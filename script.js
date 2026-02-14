@@ -66,7 +66,7 @@ console.log(getAvailableAmount()) */
 searchAlbums("for") */
 
 
-function searchAlbums(namePart){
+/* function searchAlbums(namePart){
     for(let i of albums){
         for(let j of i.details){
             if(j.name.toLowerCase().includes(namePart.toLowerCase())){
@@ -76,4 +76,25 @@ function searchAlbums(namePart){
     }
 }
 
-searchAlbums("Hello")
+searchAlbums("Hello") */
+
+function averageTrackCount(){
+let array = []
+let counter = 0;
+    for(let album of albums){
+        let numberOfTrack = 0;
+        for(let j of album.details){
+            numberOfTrack++
+        }
+        array.push(numberOfTrack)
+    }
+    console.log(array)
+
+    for(let i of array){
+        counter+=i
+    }
+    let result = counter/array.length
+    return result
+}
+
+console.log(averageTrackCount())
