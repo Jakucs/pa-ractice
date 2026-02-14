@@ -99,7 +99,7 @@ let counter = 0;
 
 console.log(averageTrackCount()) */
 
-function getAlbumsWithHigherPrice(minPrice){
+/* function getAlbumsWithHigherPrice(minPrice){
     let biggerThanMinPrice=[]
     for(let i of albums){
         if(i.price>minPrice){
@@ -109,4 +109,19 @@ function getAlbumsWithHigherPrice(minPrice){
     return biggerThanMinPrice
 }
 
-console.log(getAlbumsWithHigherPrice(1000))
+console.log(getAlbumsWithHigherPrice(1000)) */
+
+function getAlbumRuntime(product){
+    let millisecondsOfEvveryAlbum=0;
+    for(let i of product.details){
+        millisecondsOfEvveryAlbum+=i.milliseconds
+    }
+
+    return millisecondsOfEvveryAlbum/1000
+}
+
+
+for(let album of albums){
+    console.log(getAlbumRuntime(album))
+
+}
