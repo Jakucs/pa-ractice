@@ -78,7 +78,7 @@ searchAlbums("for") */
 
 searchAlbums("Hello") */
 
-function averageTrackCount(){
+/* function averageTrackCount(){
 let array = []
 let counter = 0;
     for(let album of albums){
@@ -97,4 +97,16 @@ let counter = 0;
     return result
 }
 
-console.log(averageTrackCount())
+console.log(averageTrackCount()) */
+
+function getAlbumsWithHigherPrice(minPrice){
+    let biggerThanMinPrice=[]
+    for(let i of albums){
+        if(i.price>minPrice){
+            biggerThanMinPrice.push(i)
+        }
+    }
+    return biggerThanMinPrice
+}
+
+console.log(getAlbumsWithHigherPrice(1000))
