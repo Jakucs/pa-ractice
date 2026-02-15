@@ -111,6 +111,45 @@ console.log(averageTrackCount()) */
 
 console.log(getAlbumsWithHigherPrice(1000)) */
 
+/* function getAlbumRuntime(product){
+    let millisecondsOfEvveryAlbum=0;
+    for(let i of product.details){
+        millisecondsOfEvveryAlbum+=i.milliseconds
+    }
+
+    return millisecondsOfEvveryAlbum/1000
+}
+
+
+/* for(let album of albums){
+    console.log(getAlbumRuntime(album))
+} */
+
+
+/* function getMostValuableAlbumForRuntime(){
+    let result = []
+    let biggestRatio = 0;
+    
+    // console.log(runtimes)
+    // console.log(prices)
+
+    for(let album of albums){
+        let second = getAlbumRuntime(album)
+        if(biggestRatio<album.price / second){
+            biggestRatio = album.price / second
+            result=[];
+            result.push(album)
+        }
+        
+    }
+    return result
+}
+
+console.log(getMostValuableAlbumForRuntime()) */
+
+
+
+
 function getAlbumRuntime(product){
     let millisecondsOfEvveryAlbum=0;
     for(let i of product.details){
@@ -127,30 +166,19 @@ function getAlbumRuntime(product){
 
 
 function getMostValuableAlbumForRuntime(){
-    let runtimes = [];
-    let prices = [];
+    let biggestRatio = 0;
     let result = [];
     for(let album of albums){
-        //console.log(album)
-        runtimes.push(getAlbumRuntime(album))
-        
-        prices.push(album.price)
-    }
-    // console.log(runtimes)
-    // console.log(prices)
-
-    for(let i of prices){
-        for(let j of runtimes){
-            result.push(i/j)
+        let runtime = getAlbumRuntime(album)
+        let price = album.price
+        let value = price/runtime
+        if(biggestRatio<value){
+            result = []
+            biggestRatio=value
+            result.push(album)
         }
     }
-    let maxNumber = 0;
-    for(let i of result){
-        if(i>maxNumber){
-            maxNumber=i
-        }
-    }
-    console.log(maxNumber)
+    return result
 }
 
-getMostValuableAlbumForRuntime()
+console.log(getMostValuableAlbumForRuntime())
