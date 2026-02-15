@@ -185,14 +185,14 @@ console.log(getMostValuableAlbumForRuntime()) */
 
 
 
-function getGenreCount(album){
+/* function getGenreCount(album){
     let result = [];
     for(let i of album.details){
         if(!result.includes(i.genre_id))
         result.push(i.genre_id)
     }
     return result.length
-}
+} */
 
 /* for(let album of albums){
     console.log(getGenreCount(album))
@@ -200,7 +200,7 @@ function getGenreCount(album){
 } */
 
 
-function getAlbumsWithMultipleGenres(){
+/* function getAlbumsWithMultipleGenres(){
     let result = []
     for(let album of albums){
         let genres = getGenreCount(album)
@@ -211,4 +211,19 @@ function getAlbumsWithMultipleGenres(){
     return result
 }
 
-console.log(getAlbumsWithMultipleGenres())
+console.log(getAlbumsWithMultipleGenres()) */
+
+function getOneWordArtistNames(){
+    let vendors = [];
+    for(let album of albums){
+        if(!vendors.includes(album.vendor.name)){
+            if(!album.vendor.name.includes(" ")){
+                vendors.push(album.vendor.name)
+            }
+        }
+    }
+    return vendors
+}
+
+console.log(getOneWordArtistNames())
+
