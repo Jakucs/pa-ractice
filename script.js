@@ -150,14 +150,14 @@ console.log(getMostValuableAlbumForRuntime()) */
 
 
 
-function getAlbumRuntime(product){
+/* function getAlbumRuntime(product){
     let millisecondsOfEvveryAlbum=0;
     for(let i of product.details){
         millisecondsOfEvveryAlbum+=i.milliseconds
     }
 
     return millisecondsOfEvveryAlbum/1000
-}
+} */
 
 
 /* for(let album of albums){
@@ -165,7 +165,7 @@ function getAlbumRuntime(product){
 } */
 
 
-function getMostValuableAlbumForRuntime(){
+/* function getMostValuableAlbumForRuntime(){
     let biggestRatio = 0;
     let result = [];
     for(let album of albums){
@@ -181,4 +181,20 @@ function getMostValuableAlbumForRuntime(){
     return result
 }
 
-console.log(getMostValuableAlbumForRuntime())
+console.log(getMostValuableAlbumForRuntime()) */
+
+
+
+function getGenreCount(album){
+    let result = [];
+    for(let i of album.details){
+        if(!result.includes(i.genre_id))
+        result.push(i.genre_id)
+    }
+    return result.length
+}
+
+for(let album of albums){
+    console.log(getGenreCount(album))
+    //console.log(album)
+}
