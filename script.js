@@ -194,7 +194,21 @@ function getGenreCount(album){
     return result.length
 }
 
-for(let album of albums){
+/* for(let album of albums){
     console.log(getGenreCount(album))
     //console.log(album)
+} */
+
+
+function getAlbumsWithMultipleGenres(){
+    let result = []
+    for(let album of albums){
+        let genres = getGenreCount(album)
+        if(genres>1){
+            result.push(album)
+        }
+    }
+    return result
 }
+
+console.log(getAlbumsWithMultipleGenres())
