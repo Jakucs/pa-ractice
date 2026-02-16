@@ -248,5 +248,7 @@ console.log(getMostComplexSong()) */
 
 
 for(let album of albums){
-    console.log(album.vendor.name)
+    if(album.requires_shipping==true){
+        console.log(album)
+    }
 }
