@@ -229,7 +229,7 @@ console.log(getOneWordArtistNames()) */
 
 
 
-function getMostComplexSong(){
+/* function getMostComplexSong(){
     let mb = 0;
     let result;
     for(let album of albums){
@@ -244,4 +244,9 @@ function getMostComplexSong(){
 }
 
 
-console.log(getMostComplexSong())
+console.log(getMostComplexSong()) */
+
+
+for(let album of albums){
+    console.log(album.vendor.name)
+}
