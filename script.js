@@ -213,7 +213,7 @@ console.log(getMostValuableAlbumForRuntime()) */
 
 console.log(getAlbumsWithMultipleGenres()) */
 
-function getOneWordArtistNames(){
+/* function getOneWordArtistNames(){
     let vendors = [];
     for(let album of albums){
         if(!vendors.includes(album.vendor.name)){
@@ -225,5 +225,23 @@ function getOneWordArtistNames(){
     return vendors
 }
 
-console.log(getOneWordArtistNames())
+console.log(getOneWordArtistNames()) */
 
+
+
+function getMostComplexSong(){
+    let mb = 0;
+    let result;
+    for(let album of albums){
+        for(let detail of album.details){
+            if(mb < detail.bytes / detail.milliseconds){
+                mb = detail.bytes / detail.milliseconds
+                result = album.name
+            }
+        }
+    }
+    return result
+}
+
+
+console.log(getMostComplexSong())
