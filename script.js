@@ -330,11 +330,4 @@ for(let album of albums){
 
 
 
-    for(let detail of album.details){
-        let div = document.createElement("div")
-        let track = document.createElement("p")
-        track.textContent = detail.name
-        div.appendChild(track)
-        main.appendChild(div)
-    }
 }
