@@ -284,8 +284,18 @@ for(let album of albums){
 console.log(details.length) */
 
 
-for(let album of albums){
+/* for(let album of albums){
     if(album.status=="available"){
         console.log(album)
     }
-}
+} */
+let array = [];
+    for(let album of albums){
+        for(let detail of album.details){
+            if(detail.milliseconds >= 60000){
+                let string = `name: ${detail.name}, composer: ${detail.composer}`
+                array.push(string)
+            }
+        }
+    }
+    console.log(array)
