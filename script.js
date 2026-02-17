@@ -247,8 +247,29 @@ console.log(getOneWordArtistNames()) */
 console.log(getMostComplexSong()) */
 
 
-for(let album of albums){
+/* for(let album of albums){
     if(album.requires_shipping==true){
         console.log(album)
     }
+} */
+
+
+
+/* for(let album of albums){
+    console.log(album.price)
+} */
+
+let array = [];
+
+for(let album of albums){
+    array.push(album.price)
 }
+
+let result = 0;
+for(let i of array){
+    result += i
+}
+console.log(result)
+let result2 = result/array.length
+
+console.log(result2)
