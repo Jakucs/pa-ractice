@@ -289,7 +289,7 @@ console.log(details.length) */
         console.log(album)
     }
 } */
-let array = [];
+/* let array = [];
     for(let album of albums){
         for(let detail of album.details){
             if(detail.milliseconds >= 60000){
@@ -298,4 +298,43 @@ let array = [];
             }
         }
     }
-    console.log(array)
+    console.log(array) */
+
+
+let main = document.getElementById("root")
+
+for(let album of albums){
+    let element = document.createElement("div")
+    let p = document.createElement("h2")
+    p.style.color="red"
+    p.textContent = album.name
+    element.appendChild(p)
+    main.appendChild(element)
+
+    let status = document.createElement("div")
+    let statusParagraph = document.createElement("p")
+    statusParagraph.textContent=album.status
+    statusParagraph.style.color="purple"
+    status.appendChild(statusParagraph)
+    element.appendChild(status)
+    main.appendChild(element)
+
+
+    let price = document.createElement("div")
+    let priceParagraph = document.createElement("p")
+    priceParagraph.textContent=album.price
+    priceParagraph.style.color="green"
+    price.appendChild(priceParagraph)
+    element.appendChild(price)
+    main.appendChild(element)
+
+
+
+    for(let detail of album.details){
+        let div = document.createElement("div")
+        let track = document.createElement("p")
+        track.textContent = detail.name
+        div.appendChild(track)
+        main.appendChild(div)
+    }
+}
