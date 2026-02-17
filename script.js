@@ -274,11 +274,18 @@ let result2 = result/array.length
 
 console.log(result2) */
 
-let details=[];
+/* let details=[];
 
 for(let album of albums){
     for(let detail of album.details){
         details.push(detail)
     }
 }
-console.log(details.length)
+console.log(details.length) */
+
+
+for(let album of albums){
+    if(album.status=="available"){
+        console.log(album)
+    }
+}
