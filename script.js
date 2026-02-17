@@ -259,7 +259,7 @@ console.log(getMostComplexSong()) */
     console.log(album.price)
 } */
 
-let array = [];
+/* let array = [];
 
 for(let album of albums){
     array.push(album.price)
@@ -272,4 +272,13 @@ for(let i of array){
 console.log(result)
 let result2 = result/array.length
 
-console.log(result2)
+console.log(result2) */
+
+let details=[];
+
+for(let album of albums){
+    for(let detail of album.details){
+        details.push(detail)
+    }
+}
+console.log(details.length)
