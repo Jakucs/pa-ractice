@@ -330,4 +330,25 @@ for(let album of albums){
 
 
 
+    for(let detail of album.details){
+        let div = document.createElement("div")
+        let track = document.createElement("p")
+        track.textContent = detail.name
+        div.appendChild(track)
+        main.appendChild(div)
+
+
+
+        let div2 = document.createElement("div2")
+        let p = document.createElement("p")
+        p.textContent = `seconds: ${detail.milliseconds/1000}`
+        p.style.backgroundColor = "yellow"
+        p.style.fontSize = "10px"
+        p.style.textTransform = "uppercase"
+        p.style.boxShadow = "0px 4px 10px rgba(0,0,0,0.3)"
+        p.style.textAlign = "center"
+        p.style.cursor = "pointer"
+        div.appendChild(p)
+        main.appendChild(div2)
+    }
 }
