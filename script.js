@@ -352,7 +352,7 @@ for(let album of albums){
         main.appendChild(div2)
     }
 } */
-let counter = 0;
+/* let counter = 0;
 for(let album of albums){
     for(let track of album.details){
         counter++
@@ -360,4 +360,19 @@ for(let album of albums){
     }
 }
 
-console.log(counter)
+console.log(counter) */
+
+
+/* let albumLength = albums.length -1
+
+console.log(albums[albumLength].name) */
+
+function getSongCountInFirst(){
+    let counter = 0;
+    for(let detail of albums[0].details){
+        counter++
+    }
+    return counter
+}
+
+console.log(getSongCountInFirst())
