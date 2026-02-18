@@ -367,7 +367,7 @@ console.log(counter) */
 
 console.log(albums[albumLength].name) */
 
-function getSongCountInFirst(){
+/* function getSongCountInFirst(){
     let counter = 0;
     for(let detail of albums[0].details){
         counter++
@@ -375,4 +375,15 @@ function getSongCountInFirst(){
     return counter
 }
 
-console.log(getSongCountInFirst())
+console.log(getSongCountInFirst()) */
+
+
+function getAvailableAmount(){
+    for(let album of albums){
+        if(!album.status==='available'){
+            console.log(album)
+        }
+    }
+}
+
+getAvailableAmount()
