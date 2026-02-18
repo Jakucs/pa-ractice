@@ -378,7 +378,7 @@ console.log(albums[albumLength].name) */
 console.log(getSongCountInFirst()) */
 
 
-function getAvailableAmount(){
+/* function getAvailableAmount(){
     for(let album of albums){
         if(!album.status==='available'){
             console.log(album)
@@ -386,4 +386,16 @@ function getAvailableAmount(){
     }
 }
 
-getAvailableAmount()
+getAvailableAmount() */
+
+function searchAlbums(namePart){
+    let albumsWithNamePart = []
+    for(let album of albums){
+        if(album.name.toLowerCase().includes(namePart.toLowerCase())){
+            albumsWithNamePart.push(album)
+        }
+    }
+    return albumsWithNamePart
+}
+
+console.log(searchAlbums("strings"))
