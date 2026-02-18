@@ -400,7 +400,7 @@ getAvailableAmount() */
 
 console.log(searchAlbums("World")) */
 
-function averageTrackCount(){
+/* function averageTrackCount(){
     let tracksPerAlbum = []
     for(let album of albums){
         let tracksNumber = album.details.length;
@@ -411,6 +411,22 @@ function averageTrackCount(){
     for(let track of tracksPerAlbum){
         sum+= track
     }
+    let result = sum/tracksPerAlbum.length
+    return result
+}
+
+console.log(averageTrackCount()) */
+
+function averageTrackCount(){
+    let tracksPerAlbum = []
+    for(let album of albums){
+        let tracksNumber = album.details.length;
+        tracksPerAlbum.push(tracksNumber)
+    }
+
+    let sum = tracksPerAlbum.reduce((acc, current) => {
+        return acc + current
+    }, 0)
     let result = sum/tracksPerAlbum.length
     return result
 }
