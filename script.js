@@ -388,7 +388,7 @@ console.log(getSongCountInFirst()) */
 
 getAvailableAmount() */
 
-function searchAlbums(namePart){
+/* function searchAlbums(namePart){
     let albumsWithNamePart = []
     for(let album of albums){
         if(album.name.toLowerCase().includes(namePart.toLowerCase())){
@@ -398,4 +398,21 @@ function searchAlbums(namePart){
     return albumsWithNamePart
 }
 
-console.log(searchAlbums("strings"))
+console.log(searchAlbums("World")) */
+
+function averageTrackCount(){
+    let tracksPerAlbum = []
+    for(let album of albums){
+        let tracksNumber = album.details.length;
+        tracksPerAlbum.push(tracksNumber)
+    }
+
+    let sum = 0;
+    for(let track of tracksPerAlbum){
+        sum+= track
+    }
+    let result = sum/tracksPerAlbum.length
+    return result
+}
+
+console.log(averageTrackCount())
