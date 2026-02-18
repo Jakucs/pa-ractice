@@ -417,18 +417,33 @@ console.log(searchAlbums("World")) */
 
 console.log(averageTrackCount()) */
 
-function averageTrackCount(){
+/* function averageTrackCount(){
     let tracksPerAlbum = []
     for(let album of albums){
         let tracksNumber = album.details.length;
         tracksPerAlbum.push(tracksNumber)
     }
 
-    let sum = tracksPerAlbum.reduce((acc, current) => {
+    let sum = tracksPerAlbum.reduce((acc, current)=>{
         return acc + current
     }, 0)
     let result = sum/tracksPerAlbum.length
     return result
 }
 
-console.log(averageTrackCount())
+console.log(averageTrackCount()) */
+
+function getAlbumsWithHigherPrice(minPrice){
+    let determinedAlbums = [];
+    for(let album of albums){
+        if(album.price > minPrice){
+            determinedAlbums.push(album)
+        }
+    }
+    let sortedDeterminedAlbums = determinedAlbums.sort((a, b)=> {
+        return a.price - b.price
+    })
+    return sortedDeterminedAlbums;
+}
+
+console.log(getAlbumsWithHigherPrice("1000"))
