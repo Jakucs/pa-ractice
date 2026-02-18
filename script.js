@@ -462,3 +462,8 @@ function getAlbumRuntime(album){
 for(let album of albums){
     console.log(getAlbumRuntime(album))
 }
+
+
+function getMostValuableAlbumForRuntime(){
+    
+}
