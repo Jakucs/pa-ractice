@@ -301,7 +301,7 @@ console.log(details.length) */
     console.log(array) */
 
 
-let main = document.getElementById("root")
+/* let main = document.getElementById("root")
 
 for(let album of albums){
     let element = document.createElement("div")
@@ -351,4 +351,13 @@ for(let album of albums){
         div.appendChild(p)
         main.appendChild(div2)
     }
+} */
+let counter = 0;
+for(let album of albums){
+    for(let track of album.details){
+        counter++
+
+    }
 }
+
+console.log(counter)
