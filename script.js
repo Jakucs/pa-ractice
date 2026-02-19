@@ -478,11 +478,79 @@ console.log(getAlbumsWithHigherPrice("1000")) */
 }
 
 getMostValuableAlbumForRuntime() */
-let root = document.getElementById("root")
+/* let root = document.getElementById("root")
 for(let album of albums){
     let div = document.createElement("div")
     let h2 = document.createElement("h2")
     h2.textContent = album.name
     div.appendChild(h2)
     root.appendChild(div)
+} */
+
+
+
+
+/*     task1:
+Collect all the albums that have a price below 900 and have more than 5 tracks
+
+task2:
+Find the longest album (the one that takes the most time to play)
+
+task3:
+Create a button on the top of the page. When we click on it, it displays the longest album’s name in a different div below the button. */
+
+
+function collectAlbums(price, long){
+    let result = [];
+    for(let album of albums){
+        if(album.price<price && album.details.length>long){
+            result.push(album)
+        }
+    }
+    return result
 }
+console.log(collectAlbums(900, 5))
+
+
+function searchLongestAlbum(){
+    let biggestMilliSecond = 0;
+    let longestAlbum;
+
+
+    for(let album of albums){
+        let albumMilliseconds=0;
+        for(let track of album.details){
+            albumMilliseconds+=track.milliseconds
+        }
+        if(biggestMilliSecond<albumMilliseconds){
+            biggestMilliSecond = albumMilliseconds
+            longestAlbum = album
+            
+        }
+        //console.log(albumMilliseconds)
+    }
+    console.log("albumItself", longestAlbum)
+    console.log("biggestMilliSecond", biggestMilliSecond)
+    return longestAlbum
+}
+
+let longestAlbum = searchLongestAlbum()
+
+
+function addElement(){
+    let root = document.getElementById("root")
+    let div = document.createElement("div")
+    let button = document.createElement("button")
+    button.textContent = "Button"
+    
+    button.addEventListener("click", function(e){
+        let h2 = document.createElement("h2")
+        h2.textContent = longestAlbum.name
+        div.appendChild(h2)
+    })
+
+    div.appendChild(button)
+    root.appendChild(div)
+}
+
+addElement()
