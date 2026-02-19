@@ -448,14 +448,14 @@ console.log(averageTrackCount()) */
 
 console.log(getAlbumsWithHigherPrice("1000")) */
 
-function getAlbumRuntime(album){
+/* function getAlbumRuntime(album){
     let milliseconds = 0;
     for(let detail of album.details){
         milliseconds += detail.milliseconds
     }
     let second = milliseconds/1000
     return second
-}
+} */
 
 
 
@@ -464,7 +464,7 @@ function getAlbumRuntime(album){
 } */
 
 
-function getMostValuableAlbumForRuntime(){
+/* function getMostValuableAlbumForRuntime(){
     let result = 0;
     let finalAlbum;
     for(let album of albums){
@@ -477,4 +477,12 @@ function getMostValuableAlbumForRuntime(){
     console.log(finalAlbum)
 }
 
-getMostValuableAlbumForRuntime()
+getMostValuableAlbumForRuntime() */
+let root = document.getElementById("root")
+for(let album of albums){
+    let div = document.createElement("div")
+    let h2 = document.createElement("h2")
+    h2.textContent = album.name
+    div.appendChild(h2)
+    root.appendChild(div)
+}
