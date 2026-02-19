@@ -500,7 +500,7 @@ task3:
 Create a button on the top of the page. When we click on it, it displays the longest album’s name in a different div below the button. */
 
 
-function collectAlbums(price, long){
+/* function collectAlbums(price, long){
     let result = [];
     for(let album of albums){
         if(album.price<price && album.details.length>long){
@@ -554,4 +554,27 @@ function addElement(){
     root.appendChild(div)
 }
 
-addElement()
+addElement() */
+
+
+function findTheLongestAlbum(){
+    let biggestTime=0;
+    let longestAlbum;
+    for(let album of albums){
+        let time = 0;
+        for(let track of album.details){
+            time += track.milliseconds
+        }
+        if(biggestTime<time){
+            biggestTime=time
+            longestAlbum=album
+        }
+        //console.log("album: ", album, "time: ", time)
+    }
+
+
+    console.log("legnagyobb idő: ", biggestTime)
+    console.log("Hozzá tartozó album: ", longestAlbum)
+}
+
+findTheLongestAlbum()
