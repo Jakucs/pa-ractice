@@ -543,10 +543,11 @@ function addElement(){
     let button = document.createElement("button")
     button.textContent = "Button"
     
+    let h2 = document.createElement("h2")
+    h2.textContent = longestAlbum.name
     button.addEventListener("click", function(e){
-        let h2 = document.createElement("h2")
-        h2.textContent = longestAlbum.name
-        div.appendChild(h2)
+            div.appendChild(h2)
+            console.log(h2.parentElement)
     })
 
     div.appendChild(button)
