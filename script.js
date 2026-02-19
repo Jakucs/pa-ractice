@@ -586,7 +586,9 @@ function findTheBiggestAlbum(){
             console.log(track)
             tracksByte+= track.bytes
         }
-
+        if(biggestAlbum<trackByte){
+            biggestAlbum=tracksByte
+        }
     }
 }
 
