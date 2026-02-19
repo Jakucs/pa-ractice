@@ -557,7 +557,7 @@ function addElement(){
 addElement() */
 
 
-function findTheLongestAlbum(){
+/* function findTheLongestAlbum(){
     let biggestTime=0;
     let longestAlbum;
     for(let album of albums){
@@ -571,10 +571,23 @@ function findTheLongestAlbum(){
         }
         //console.log("album: ", album, "time: ", time)
     }
-
-
     console.log("legnagyobb idő: ", biggestTime)
     console.log("Hozzá tartozó album: ", longestAlbum)
 }
 
-findTheLongestAlbum()
+findTheLongestAlbum() */
+
+
+function findTheBiggestAlbum(){
+    for(let album of albums){
+        let biggestAlbum=0;
+        for(let track of album.details){
+            let tracksByte=0;
+            console.log(track)
+            tracksByte+= track.bytes
+        }
+
+    }
+}
+
+findTheBiggestAlbum()
