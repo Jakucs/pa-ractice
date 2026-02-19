@@ -537,3 +537,20 @@ function searchLongestAlbum(){
 let longestAlbum = searchLongestAlbum()
 
 
+function addElement(){
+    let root = document.getElementById("root")
+    let div = document.createElement("div")
+    let button = document.createElement("button")
+    button.textContent = "Button"
+    
+    button.addEventListener("click", function(e){
+        let h2 = document.createElement("h2")
+        h2.textContent = longestAlbum.name
+        div.appendChild(h2)
+    })
+
+    div.appendChild(button)
+    root.appendChild(div)
+}
+
+addElement()
