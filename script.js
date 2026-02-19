@@ -459,11 +459,22 @@ function getAlbumRuntime(album){
 
 
 
-for(let album of albums){
+/* for(let album of albums){
     console.log(getAlbumRuntime(album))
-}
+} */
 
 
 function getMostValuableAlbumForRuntime(){
-    
+    let result = 0;
+    let finalAlbum;
+    for(let album of albums){
+        let runtime = getAlbumRuntime(album)
+        if(result<album.price / runtime){
+            result = album.price / runtime
+            finalAlbum=album
+        }
+    }
+    console.log(finalAlbum)
 }
+
+getMostValuableAlbumForRuntime()
