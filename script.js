@@ -579,17 +579,21 @@ findTheLongestAlbum() */
 
 
 function findTheBiggestAlbum(){
+    let biggestAlbumSize=0;
+    let biggestAlbum;
     for(let album of albums){
-        let biggestAlbum=0;
         for(let track of album.details){
             let tracksByte=0;
-            console.log(track)
+            //console.log(track)
             tracksByte+= track.bytes
-        }
-        if(biggestAlbum<trackByte){
-            biggestAlbum=tracksByte
+            if(biggestAlbumSize<tracksByte){
+                biggestAlbumSize=tracksByte
+                biggestAlbum=album
+            }
         }
     }
+    console.log("biggestAlbumSize", biggestAlbumSize)
+    console.log("album", biggestAlbum)
 }
 
 findTheBiggestAlbum()
