@@ -578,7 +578,7 @@ addElement() */
 findTheLongestAlbum() */
 
 
-function findTheBiggestAlbum(){
+/* function findTheBiggestAlbum(){
     let biggestAlbumSize=0;
     let biggestAlbum;
     for(let album of albums){
@@ -596,4 +596,19 @@ function findTheBiggestAlbum(){
     console.log("album", biggestAlbum)
 }
 
-findTheBiggestAlbum()
+findTheBiggestAlbum() */
+
+
+
+function higherThan(){
+    let filtered = albums.filter(album=>album.price>1570)
+    //console.log(filtered)
+
+    let mapped = albums.map(album=>album.name)
+    //console.log(mapped)
+
+    let sortedAlbum = albums.sort((a, b) => a.price - b.price)
+    console.log(sortedAlbum)
+}
+
+higherThan()
