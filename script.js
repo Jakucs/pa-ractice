@@ -608,7 +608,10 @@ function higherThan(){
     //console.log(mapped)
 
     let sortedAlbum = albums.sort((a, b) => a.price - b.price)
-    console.log(sortedAlbum)
+    //console.log(sortedAlbum)
+
+    let id2 = albums.find(albumid2 => albumid2.id == 2)
+    console.log(id2)
 }
 
 higherThan()
