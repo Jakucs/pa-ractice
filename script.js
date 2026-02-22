@@ -628,7 +628,7 @@ What is the average price of the available albums? Return the average price roun
 Task3:
 Create two input fields and a button. When we click on it, it displays only the filtered albums on your website. Inputs and the button don’t disappear. */
 
-function addDeterminedAlbums(){
+/* function addDeterminedAlbums(){
     let array = [];
     for(let album of albums){
         if(album.price < 1000 && album.name.toLowerCase().startsWith("t")){
@@ -636,6 +636,16 @@ function addDeterminedAlbums(){
         }
     }
     return array
+}
+
+console.log(addDeterminedAlbums()) */
+
+
+
+function addDeterminedAlbums(){
+    return albums
+            .filter(album=> album.price<1000 && album.name.toLowerCase().startsWith("t"))
+            .map(album=>album.name)
 }
 
 console.log(addDeterminedAlbums())
