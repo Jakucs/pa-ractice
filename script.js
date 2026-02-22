@@ -600,7 +600,7 @@ findTheBiggestAlbum() */
 
 
 
-function higherThan(){
+/* function higherThan(){
     let filtered = albums.filter(album=>album.price>1570)
     //console.log(filtered)
 
@@ -614,4 +614,28 @@ function higherThan(){
     console.log(id2)
 }
 
-higherThan()
+higherThan() */
+
+
+
+
+/* task1:
+Collect all the albums that cost less than 1000 and title starts with 'T' (case-insensitively)
+
+task2:
+What is the average price of the available albums? Return the average price rounded to 2 decimals (e.g. 10.15)
+
+Task3:
+Create two input fields and a button. When we click on it, it displays only the filtered albums on your website. Inputs and the button don’t disappear. */
+
+function addDeterminedAlbums(){
+    let array = [];
+    for(let album of albums){
+        if(album.price < 1000 && album.name.toLowerCase().startsWith("t")){
+            array.push(album.name)
+        }
+    }
+    return array
+}
+
+console.log(addDeterminedAlbums())
