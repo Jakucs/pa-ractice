@@ -642,10 +642,30 @@ console.log(addDeterminedAlbums()) */
 
 
 
-function addDeterminedAlbums(){
+/* function addDeterminedAlbums(){
     return albums
             .filter(album=> album.price<1000 && album.name.toLowerCase().startsWith("t"))
             .map(album=>album.name)
 }
 
-console.log(addDeterminedAlbums())
+console.log(addDeterminedAlbums()) */
+
+function countAlbums(){
+    let availableAlbums = [];
+    let prices = [];
+    for(let album of albums){
+        if(album.status == "available"){
+            prices.push(album.price)
+        }
+    }
+    //console.log(availableAlbums)
+
+/*     for(let price of availableAlbums.price){
+        prices.push(price)
+    } */
+    const sum = prices.reduce((acc, current) => acc + current, 0)
+    let result = sum / prices.length - 1 
+    console.log(result)
+}
+
+countAlbums()
