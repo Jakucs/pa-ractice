@@ -755,7 +755,7 @@ console.log(result3) */
 
 console.log(result) */
 
-const fruits = ["apple", "banana", "apple", "orange", "banana", "apple"];
+/* const fruits = ["apple", "banana", "apple", "orange", "banana", "apple"];
 
 let result = fruits.reduce((acc, current) => {
     if(acc[current]){
@@ -766,4 +766,13 @@ let result = fruits.reduce((acc, current) => {
     return acc
 }, {})
 
-console.log(result)
+console.log(result) */
+
+
+const nested = [[1, 2], [3, 4], [5]];
+
+let result = nested.reduce((acc, current) => {
+    return acc.concat(current); // vagy [...acc, ...current]
+}, []);
+
+console.log(result);
