@@ -650,7 +650,7 @@ console.log(addDeterminedAlbums()) */
 
 console.log(addDeterminedAlbums()) */
 
-function countAlbums(){
+/* function countAlbums(){
     let availableAlbums = [];
     let prices = [];
     for(let album of albums){
@@ -660,9 +660,7 @@ function countAlbums(){
     }
     //console.log(availableAlbums)
 
-/*     for(let price of availableAlbums.price){
-        prices.push(price)
-    } */
+
     const sum = prices.reduce((acc, current) => acc + current, 0)
     let result = sum / prices.length - 1
     console.log(result)
@@ -671,13 +669,13 @@ function countAlbums(){
     return result2
 }
 
-countAlbums()
+countAlbums() */
 
 
 
 
 
-function createElements(){
+/* function createElements(){
 let root = document.getElementById("root")
 
 let input = document.createElement("input")
@@ -717,4 +715,30 @@ button2.addEventListener("click", function(e) {
 })
 }
 
-createElements()
+createElements() */
+
+
+//Reduce
+
+const numbers = [5, 12, 8, 130, 44];
+
+// let result = numbers.reduce((acc, current) => acc + current, 0)
+//console.log(result)
+
+/* let result2 = numbers.reduce((acc, current) => {
+    if(current>10){
+        return acc + 1;
+    }else{
+        return acc;
+    }
+}, 0)
+console.log(result2) */
+
+let result3 = numbers.reduce((acc, current) => {
+    if(acc<current){
+        acc = current
+    }
+    return acc
+}, 0)
+
+console.log(result3)
