@@ -707,6 +707,11 @@ button.addEventListener("click", function(e) {
     div.appendChild(p)
     root.appendChild(div)
 })
+
+button2.addEventListener("click", function(e) {
+    div.appendChild(p)
+    root.appendChild(div)
+})
 }
 
 createElements()
