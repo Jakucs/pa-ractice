@@ -666,6 +666,40 @@ function countAlbums(){
     const sum = prices.reduce((acc, current) => acc + current, 0)
     let result = sum / prices.length - 1 
     console.log(result)
+
+    return result
 }
 
 countAlbums()
+
+
+
+
+
+function createElements(){
+let root = document.getElementById("root")
+
+let input = document.createElement("input")
+input.placeholder="input"
+root.appendChild(input)
+
+let button = document.createElement("button")
+button.textContent="button"
+button.style.margin="20px"
+root.appendChild(button)
+
+let input2 = document.createElement("input")
+input2.placeholder="input2"
+root.appendChild(input2)
+
+let button2 = document.createElement("button")
+button2.textContent="button2"
+button2.style.margin="20px"
+root.appendChild(button2)
+
+
+
+
+}
+
+createElements()
