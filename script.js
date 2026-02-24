@@ -699,7 +699,14 @@ root.appendChild(button2)
 
 
 
-
+let returnValue = countAlbums()
+let div = document.createElement("div")
+let p = document.createElement("p")
+p.textContent=returnValue
+button.addEventListener("click", function(e) {
+    div.appendChild(p)
+    root.appendChild(div)
+})
 }
 
 createElements()
