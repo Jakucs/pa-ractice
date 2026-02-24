@@ -664,10 +664,11 @@ function countAlbums(){
         prices.push(price)
     } */
     const sum = prices.reduce((acc, current) => acc + current, 0)
-    let result = sum / prices.length - 1 
+    let result = sum / prices.length - 1
     console.log(result)
-
-    return result
+    let result2 = result.toFixed(2)
+    console.log(result2)
+    return result2
 }
 
 countAlbums()
@@ -704,11 +705,13 @@ let div = document.createElement("div")
 let p = document.createElement("p")
 p.textContent=returnValue
 button.addEventListener("click", function(e) {
+    input.placeholder=p
     div.appendChild(p)
     root.appendChild(div)
 })
 
 button2.addEventListener("click", function(e) {
+    input2.placeholder=p
     div.appendChild(p)
     root.appendChild(div)
 })
