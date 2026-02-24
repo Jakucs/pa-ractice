@@ -734,11 +734,23 @@ const numbers = [5, 12, 8, 130, 44];
 }, 0)
 console.log(result2) */
 
-let result3 = numbers.reduce((acc, current) => {
+/* let result3 = numbers.reduce((acc, current) => {
     if(acc<current){
         acc = current
     }
     return acc
 }, 0)
 
-console.log(result3)
+console.log(result3) */
+
+const numbers2 = [5, 12, 8, 130, 44];
+
+let result = numbers2.reduce((acc, current) => {
+    if(current>10){
+        return acc + 1
+    }else{
+        return acc
+    }
+}, 0)
+
+console.log(result)
