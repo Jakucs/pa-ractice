@@ -769,10 +769,22 @@ let result = fruits.reduce((acc, current) => {
 console.log(result) */
 
 
-const nested = [[1, 2], [3, 4], [5]];
+/* const nested = [[1, 2], [3, 4], [5]];
 
 let result = nested.reduce((acc, current) => {
-    return acc.concat(current); // vagy [...acc, ...current]
+    return acc.concat(current);
 }, []);
 
-console.log(result);
+console.log(result); */
+
+let array = [];
+for(let album of albums){
+    if(album.status=="available" && album.price>=1000 && album.price<=2000){
+        for(let track of album.details){
+            if(track.milliseconds >= 240000 && !array.includes(album.name)){
+                array.push(album.name)
+            }
+        }
+    }
+    console.log(album)
+}
