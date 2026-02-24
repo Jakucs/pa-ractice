@@ -743,14 +743,27 @@ console.log(result2) */
 
 console.log(result3) */
 
-const numbers2 = [5, 12, 8, 130, 44];
+// const numbers2 = [5, 12, 8, 130, 44];
 
-let result = numbers2.reduce((acc, current) => {
+/* let result = numbers2.reduce((acc, current) => {
     if(current>10){
         return acc + 1
     }else{
         return acc
     }
-}, 0)
+})
+
+console.log(result) */
+
+const fruits = ["apple", "banana", "apple", "orange", "banana", "apple"];
+
+let result = fruits.reduce((acc, current) => {
+    if(acc[current]){
+        acc[current] += 1
+    }else{
+        acc[current] = 1
+    }
+    return acc
+}, {})
 
 console.log(result)
