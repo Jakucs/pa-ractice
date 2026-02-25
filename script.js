@@ -790,15 +790,19 @@ for(let album of albums){
 }
  */
 
-let runTimes = []
+let runTimes = [{}];
 
 for(let album of albums){
-    console.log(album.name)
+    //console.log(album.name)
     let albumRunTime = 0;
-
+    
     for(let track of album.details){
         albumRunTime += track.milliseconds
     }
-    runTimes.push(albumRunTime)
+    
+    let obj = {
+        name: album.name,
+        time: albumRunTime
+    }
+    console.log(obj)
 }
-console.log(runTimes)
