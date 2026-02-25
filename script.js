@@ -790,10 +790,10 @@ for(let album of albums){
 }
  */
 
-let runTimes = [{}];
+let runTimes = [];
 
 for(let album of albums){
-    //console.log(album.name)
+    //gitconsole.log(album.name)
     let albumRunTime = 0;
     
     for(let track of album.details){
@@ -802,7 +802,19 @@ for(let album of albums){
     
     let obj = {
         name: album.name,
-        time: albumRunTime
+        time: albumRunTime/1000
     }
-    console.log(obj)
+    runTimes.push(obj)
 }
+
+console.log(runTimes)
+
+let max = 0;
+let biggestAlbum;
+for(let album of runTimes){
+    if(max < album.time){
+        max=album.time
+        biggestAlbum=album
+    }
+}
+console.log(biggestAlbum)
