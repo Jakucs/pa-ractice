@@ -777,7 +777,7 @@ let result = nested.reduce((acc, current) => {
 
 console.log(result); */
 
-let array = [];
+/* let array = [];
 for(let album of albums){
     if(album.status=="available" && album.price>=1000 && album.price<=2000){
         for(let track of album.details){
@@ -788,3 +788,17 @@ for(let album of albums){
     }
     console.log(album)
 }
+ */
+
+let runTimes = []
+
+for(let album of albums){
+    console.log(album.name)
+    let albumRunTime = 0;
+
+    for(let track of album.details){
+        albumRunTime += track.milliseconds
+    }
+    runTimes.push(albumRunTime)
+}
+console.log(runTimes)
