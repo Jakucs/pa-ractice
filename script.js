@@ -809,12 +809,43 @@ for(let album of albums){
 
 console.log(runTimes)
 
-let max = 0;
-let biggestAlbum;
-for(let album of runTimes){
-    if(max < album.time){
-        max=album.time
-        biggestAlbum=album
+
+
+function findBiggestAlbum(){
+    //Find biggest album
+    let max = 0;
+    let biggestAlbum;
+    for(let album of runTimes){
+        if(max < album.time){
+            max=album.time
+            biggestAlbum=album
+        }
     }
+    return biggestAlbum
 }
-console.log(biggestAlbum)
+
+console.log(findBiggestAlbum())
+
+let root = document.getElementById("root")
+let div = document.createElement("div")
+let button = document.createElement("button")
+button.textContent="biggest track"
+div.appendChild(button)
+root.appendChild(div)
+
+let div2 = document.createElement("div")
+let button2 = document.createElement("button")
+button2.textContent="lowest track"
+div2.appendChild(button2)
+root.appendChild(div2)
+
+
+let biggestDOM = document.createElement("div")
+let p = document.createElement("p")
+p.textContent=findBiggestAlbum().name
+biggestDOM.appendChild(p)
+
+button.addEventListener("click", function(e) {
+    root.appendChild(biggestDOM)
+    console.log(p.textContent)
+})
