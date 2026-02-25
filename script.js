@@ -824,6 +824,19 @@ function findBiggestAlbum(){
     return biggestAlbum
 }
 
+function findLowestAlbum(){
+    //Find biggest album
+    let min = Infinity;
+    let lowestAlbum;
+    for(let album of runTimes){
+        if(min > album.time){
+            min=album.time
+            lowestAlbum=album
+        }
+    }
+    return lowestAlbum
+}
+
 console.log(findBiggestAlbum())
 
 let root = document.getElementById("root")
@@ -848,4 +861,16 @@ biggestDOM.appendChild(p)
 button.addEventListener("click", function(e) {
     root.appendChild(biggestDOM)
     console.log(p.textContent)
+})
+
+
+//
+let lowestDOM = document.createElement("div")
+let p2 = document.createElement("p")
+p2.textContent=findLowestAlbum().name
+lowestDOM.appendChild(p2)
+
+button2.addEventListener("click", function(e) {
+    root.appendChild(lowestDOM)
+    console.log(p2.textContent)
 })
