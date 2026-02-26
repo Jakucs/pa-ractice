@@ -909,5 +909,20 @@ const albumss = [
 ];
 
 let moreThanOnemillion = albumss.filter(album=>album.sold > 1000000)
+//console.log(moreThanOnemillion)
 
-console.log(moreThanOnemillion)
+let names = albumss.map(album=>album.title)
+//console.log(names)
+
+let soldAlbumsNumber = albumss.reduce((acc, current) => {
+    return acc + current.sold
+}, 0)
+//console.log(soldedAlbumsNumber)
+
+let biggestSold = albumss.reduce((acc, current)=>{
+    if(acc>current.sold){
+        acc=current.sold
+    }
+    return acc
+})
+console.log(biggestSold)
