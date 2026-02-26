@@ -790,7 +790,7 @@ for(let album of albums){
 }
  */
 
-let runTimes = [];
+/* let runTimes = [];
 
 for(let album of albums){
     //gitconsole.log(album.name)
@@ -873,4 +873,23 @@ lowestDOM.appendChild(p2)
 button2.addEventListener("click", function(e) {
     root.appendChild(lowestDOM)
     console.log(p2.textContent)
-})
+}) */
+
+    
+
+function albumsRunTime(album){
+    //console.log(album)
+    let runTime = 0;
+    let albumame;
+    for(let track of album.details){
+        runTime += track.milliseconds
+        albumame=album.name
+    }
+    console.log(albumame)
+    console.log(runTime)
+    console.log("\n")
+}
+
+for(let album of albums){
+    albumsRunTime(album)
+}
