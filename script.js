@@ -877,19 +877,37 @@ button2.addEventListener("click", function(e) {
 
     
 
-function albumsRunTime(album){
+/* function albumsRunTime(album){
     //console.log(album)
+    let array = [];
     let runTime = 0;
-    let albumame;
+    let albumname;
     for(let track of album.details){
         runTime += track.milliseconds
-        albumame=album.name
+        albumname=album.name
     }
-    console.log(albumame)
+    console.log(albumname)
     console.log(runTime)
     console.log("\n")
+    array.push(albumname)
+    array.push(runTime)
+
 }
 
 for(let album of albums){
     albumsRunTime(album)
 }
+ */
+
+
+const albumss = [
+  { title: "Hybrid Theory", artist: "Linkin Park", price: 5000, sold: 1200000 },
+  { title: "Back in Black", artist: "AC/DC", price: 4500, sold: 1500000 },
+  { title: "Nevermind", artist: "Nirvana", price: 4000, sold: 900000 },
+  { title: "Meteora", artist: "Linkin Park", price: 5500, sold: 800000 },
+  { title: "The Dark Side of the Moon", artist: "Pink Floyd", price: 6000, sold: 2000000 }
+];
+
+let moreThanOnemillion = albumss.filter(album=>album.sold > 1000000)
+
+console.log(moreThanOnemillion)
