@@ -908,7 +908,7 @@ const albumss = [
   { title: "The Dark Side of the Moon", artist: "Pink Floyd", price: 6000, sold: 2000000 }
 ];
 
-let moreThanOnemillion = albumss.filter(album=>album.sold > 1000000)
+/* let moreThanOnemillion = albumss.filter(album=>album.sold > 1000000)
 //console.log(moreThanOnemillion)
 
 let names = albumss.map(album=>album.title)
@@ -925,4 +925,15 @@ let biggestSold = albumss.reduce((acc, current)=>{
     }
     return acc
 })
-console.log(biggestSold)
+console.log(biggestSold) */
+
+let map = albumss.map(album=>album.price*album.sold)
+//
+
+let result = map.reduce((acc, current) => {
+    if(acc<current){
+        acc=current
+    }
+    return acc
+})
+console.log(result)
