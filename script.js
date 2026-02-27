@@ -927,7 +927,7 @@ let biggestSold = albumss.reduce((acc, current)=>{
 })
 console.log(biggestSold) */
 
-let map = albumss.map(album=>album.price*album.sold)
+/* let map = albumss.map(album=>album.price*album.sold)
 //
 
 let result = map.reduce((acc, current) => {
@@ -936,4 +936,26 @@ let result = map.reduce((acc, current) => {
     }
     return acc
 })
-console.log(result)
+console.log(result) */
+
+const userList = document.getElementById('user-list');
+
+const userHTML = user => `<div>${user.name} - ${user.email}</div>`;
+
+const url = 'https://jsonplaceholder.typicode.com/users';
+
+const fetchData = async (url) => {
+
+  try {
+    const response = await fetch(url);
+    const users = await response.json();
+
+    const usersHTML = users.map(user => userHTML(user)).join("");
+
+    userList.insertAdjacentHTML("beforeend", usersHTML);
+
+  } catch (error) {
+    console.error(error);
+  }
+}
+fetchData(url);
